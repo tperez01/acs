@@ -15,7 +15,7 @@
     3.1 Navigate to Networking → Routes
     3.2 Find the central Route and click on the RHACS portal link under the Location column
 
-4. Create the init bundle, we need it as a means to communicate our clusters to ACS
+4. Create the init bundle, we need it as a means to communicate our clusters to ACS (mine it's not on the repo because it contains private keys)
     4.1 On the RHACS portal, navigate to Platform Configuration → Integrations
     4.2 Navigate to the Authentication Tokens section and click on Cluster Init Bundle
     4.3 Click Generate bundle
