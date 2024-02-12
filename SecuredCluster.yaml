@@ -31,4 +31,4 @@ spec:
       imageFlavor: Regular
     taintToleration: TolerateTaints
   clusterName: my-secured-cluster
-  centralEndpoint: 'https://central-stackrox.apps.ocp.sandbox2624.opentlc.com:443'
+  centralEndpoint: 'YOUR ACS URL HERE'
