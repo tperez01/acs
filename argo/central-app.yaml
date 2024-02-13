@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+spec:
+  destination:
+    namespace: stackrox
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: argo
+    repoURL: https://github.com/tperez01/acs.git
+    targetRevision: HEAD
