@@ -1,5 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
+metadata:
+  name: central
+  namespace: openshift-gitops
 spec:
   destination:
     namespace: stackrox
@@ -9,3 +12,24 @@ spec:
     path: argo
     repoURL: https://github.com/tperez01/acs.git
     targetRevision: HEAD
+status:
+  controllerNamespace: openshift-gitops
+  resources:
+  - group: platform.stackrox.io
+    kind: Central
+    name: stackrox-central-services
+    namespace: stackrox
+    status: Synced
+    version: v1alpha1
+  sourceType: Directory
+  sync:
+    comparedTo:
+      destination:
+        namespace: stackrox
+        server: https://kubernetes.default.svc
+      source:
+        path: argo
+        repoURL: https://github.com/tperez01/acs.git
+        targetRevision: HEAD
+    revision: 50fdb8178e61f4e0a684b05df7bfddc798caa524
+    status: Synced
