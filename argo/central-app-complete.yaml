@@ -1,0 +1,86 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2024-02-13T10:20:57Z"
+  generation: 16
+  name: central
+  namespace: openshift-gitops
+  resourceVersion: "292604"
+  uid: 76a8b32c-5510-4592-9cd6-1077fcc84f42
+spec:
+  destination:
+    namespace: stackrox
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: argo
+    repoURL: https://github.com/tperez01/acs.git
+    targetRevision: HEAD
+status:
+  controllerNamespace: openshift-gitops
+  health:
+    status: Healthy
+  history:
+  - deployStartedAt: "2024-02-13T10:25:42Z"
+    deployedAt: "2024-02-13T10:25:42Z"
+    id: 0
+    revision: 50fdb8178e61f4e0a684b05df7bfddc798caa524
+    source:
+      path: argo
+      repoURL: https://github.com/tperez01/acs.git
+      targetRevision: HEAD
+  operationState:
+    finishedAt: "2024-02-13T10:25:42Z"
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        username: tperez
+      retry: {}
+      sync:
+        revision: 50fdb8178e61f4e0a684b05df7bfddc798caa524
+        syncStrategy:
+          hook: {}
+    phase: Succeeded
+    startedAt: "2024-02-13T10:25:42Z"
+    syncResult:
+      resources:
+      - group: platform.stackrox.io
+        hookPhase: Running
+        kind: Central
+        message: central.platform.stackrox.io/stackrox-central-services created
+        name: stackrox-central-services
+        namespace: stackrox
+        status: Synced
+        syncPhase: Sync
+        version: v1alpha1
+      revision: 50fdb8178e61f4e0a684b05df7bfddc798caa524
+      source:
+        path: argo
+        repoURL: https://github.com/tperez01/acs.git
+        targetRevision: HEAD
+  reconciledAt: "2024-02-13T10:25:42Z"
+  resources:
+  - group: platform.stackrox.io
+    kind: Central
+    name: stackrox-central-services
+    namespace: stackrox
+    status: Synced
+    version: v1alpha1
+  sourceType: Directory
+  summary:
+    images:
+    - registry.redhat.io/advanced-cluster-security/rhacs-central-db-rhel8@sha256:ade3c0b4cfb4b40b107c05dd4e384a3d255852bbfc99cc45b53472180f4aad73
+    - registry.redhat.io/advanced-cluster-security/rhacs-main-rhel8@sha256:04820b12f8d78d1da4c6fa055f8284be0c0b6e3541969257c87fb950adfa044c
+    - registry.redhat.io/advanced-cluster-security/rhacs-scanner-db-rhel8@sha256:359d14444d599da13706737560f5f3f344e47ab15aaed806164a450414f599df
+    - registry.redhat.io/advanced-cluster-security/rhacs-scanner-rhel8@sha256:4bb16bf9a0162dc80fce2ae7ba941540ea03c7c1cc929a2af27c9acb51030806
+  sync:
+    comparedTo:
+      destination:
+        namespace: stackrox
+        server: https://kubernetes.default.svc
+      source:
+        path: argo
+        repoURL: https://github.com/tperez01/acs.git
+        targetRevision: HEAD
+    revision: 50fdb8178e61f4e0a684b05df7bfddc798caa524
+    status: Synced
