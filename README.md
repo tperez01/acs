@@ -42,7 +42,7 @@
 
 6. Create the Secured Cluster resource
    
-    6.1 Update the centralEndpoint specification with your ACS console URL in the **SecuredCluster.yaml** file
+    6.1 Update the centralEndpoint specification with your ACS console URL in the **SecuredCluster.yaml** file adding the :443 port
     
     6.2 Create the resource `oc apply -f SecuredCluster.yaml`
    
