@@ -8,6 +8,11 @@ spec:
     openshift:
       enabled: true
   central:
+    declarativeConfiguration:
+      configMaps:
+        - name: "declarative-configs"
+      secrets:
+        - name: "sensitive-declarative-configs"
     notifierSecretsEncryption:
       enabled: false
     exposure:
