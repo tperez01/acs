@@ -10,9 +10,9 @@ spec:
   central:
     declarativeConfiguration:
       configMaps:
-        - declarative-configs
+        - name: "declarative-configs"
       secrets:
-        - sensitive-declarative-configs
+        - name: "sensitive-declarative-configs"
     notifierSecretsEncryption:
       enabled: false
     exposure:
